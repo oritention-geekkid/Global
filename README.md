@@ -6,6 +6,7 @@
 - [项目概述(Description)](#项目概述--description-)
 - [支持的版本(Support Version)](#支持的版本--support-version-)
 - [安装(Installation)](#安装--installation-)
+- [下载和使用(How to Download and Use)](#下载和使用--How-to-Download-and-Use-)
 - [许可证(License)](#许可证--license-)
 - [作者的话(Author's Words)](#作者的话--authors-words-)
 
@@ -20,6 +21,11 @@
 ## 安装(Installation)
 * 就像安装其他的我的世界服务器插件一样，下载插件后，将其放至服务器根目录下的plugins文件夹中即可。
 * Just like other plugins for minecraft servers, after downloading, put it into plugins folder under the root folder of your server.
+
+## 下载和使用(How to Download and Use)
+* 详见Release分区
+* Go to Release area for more information
+* (www.github.com/oritention-geekkid/Global/releases)
 
 ## 许可证(License)
 [GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
