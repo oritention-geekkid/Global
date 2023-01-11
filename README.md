@@ -1,4 +1,4 @@
-![Poster](Poster-for-Global-Plugin-1.0.jpg)
+![Poster](https://imgse.com/i/pSnJsc6)
 ![License](https://img.shields.io/github/license/oritention-geekkid/Global)
 
 # Global-1.0
