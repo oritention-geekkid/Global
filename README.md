@@ -1,4 +1,4 @@
-![Poster](https://imgse.com/i/pSnJsc6)
+![pSnJsc6.jpg](https://s1.ax1x.com/2023/01/11/pSnJsc6.jpg)
 ![License](https://img.shields.io/github/license/oritention-geekkid/Global)
 
 # Global-1.0
