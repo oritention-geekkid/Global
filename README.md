@@ -34,6 +34,6 @@
 - 如果觉得插件好用或者有帮到您，不要忘了在GitHub上点上一个星
 - If you like this project, don't forget to leave a star in GitHub.
 - 如果对该项目有意见或者建议，也欢迎在Issues区域提出
-- If you have some suggestions, feel free to use Issues to put it forward.
+- If you have any suggestion, feel free to use Issues to put it forward.
 
 [(Back to top)](#目录--table-of-contents-)
