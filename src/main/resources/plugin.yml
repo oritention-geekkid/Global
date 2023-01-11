@@ -1,0 +1,12 @@
+name: Global
+version: '${project.version}'
+main: cn.org.oritention.mc.global.Global
+api-version: 1.16
+authors: [ OritentionStudio,GeekKid ]
+description: Control of  Server Global Settings
+website: mc.oritention.org.cn
+commands:
+  day:
+    description: change your own time to day
+  night:
+    description: change your own time to night

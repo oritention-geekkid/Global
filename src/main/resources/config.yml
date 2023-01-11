@@ -1,0 +1,34 @@
+# Config File for Global 1.0
+# Before using the plugin, you'd better go through this file and change every option to what you want.
+
+# World
+# Settings about breaking blocks
+NoBreak: true
+BreakPermission: ori.build  # Permission Node to ignore the break limit
+
+# Settings about placing blocks
+NoPlace: true
+PlacePermission: ori.build  # Permission Node to ignore the break limit
+
+# Settings about weather
+NoWeatherChange: true
+
+# Player
+# Day and Night Command
+DayAndNightToggle: true
+
+# Settings about hunger
+NoHunger: true
+
+# Settings about damage
+NoDamage: true
+
+# Settings about drop
+NoDrop: true
+DropPermission: ori.drop  # Permission Node to ignore the drop limit
+
+# Settings about interaction with blocks
+NoInteractionWithBlocks: true
+InteractPermission: ori.build  # Permission Node to ignore the interaction limit
+
+
