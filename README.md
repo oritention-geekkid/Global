@@ -1,7 +1,7 @@
-![pSnJsc6.jpg](https://s1.ax1x.com/2023/01/11/pSnJsc6.jpg)
+![pSKCcTg.jpg](https://s1.ax1x.com/2023/01/13/pSKCcTg.jpg)
 ![License](https://img.shields.io/github/license/oritention-geekkid/Global)
 
-# Global-1.0
+# Global-1.1
 ## 目录(Table of Contents)
 - [项目概述(Description)](#项目概述--description-)
 - [支持的版本(Support Version)](#支持的版本--support-version-)
