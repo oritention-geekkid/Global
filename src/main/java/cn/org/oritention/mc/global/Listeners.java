@@ -11,6 +11,8 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
+import java.util.List;
+
 public class Listeners implements Listener {
 
     // BlockBreakEvent
@@ -53,11 +55,19 @@ public class Listeners implements Listener {
     }
 
     // EntityDamageEvent
+    private boolean isIgnoredCause(EntityDamageEvent.DamageCause cause, List<String> ignoreLst){
+        for (String ignoreCause : ignoreLst) {
+            if(cause.name().equals(ignoreCause)) {
+                return false;
+            }
+        }
+        return true;
+    }
     @EventHandler
     public void EntityDamageEvent(EntityDamageEvent e) {
-        if(Config.getConfigB("NoDamage")){
+        if(Config.getConfigB("NoDamage")) {
             if(e.getEntity() instanceof Player) {
-                e.setCancelled(true);
+                e.setCancelled(isIgnoredCause(e.getCause(), Config.getConfigStringLst("ExceptionDamageCause")));
             }
         }
     }

@@ -1,4 +1,4 @@
-# Config File for Global 1.0
+# Config File for Global 1.1
 # Before using the plugin, you'd better go through this file and change every option to what you want.
 
 # World
@@ -22,6 +22,11 @@ NoHunger: true
 
 # Settings about damage
 NoDamage: true
+# If you don't want to use this function below, just clear all the things below the item title,
+# or you are expected to look for a totally correct DamageCause to add. (They can be from https://bukkit.windit.net/javadoc/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)
+ExceptionDamageCause:
+  - SUFFOCATION
+  - CUSTOM
 
 # Settings about drop
 NoDrop: true
