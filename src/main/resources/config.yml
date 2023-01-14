@@ -1,14 +1,18 @@
-# Config File for Global 1.1
+# Config File for Global 1.2
 # Before using the plugin, you'd better go through this file and change every option to what you want.
 
 # World
 # Settings about breaking blocks
 NoBreak: true
 BreakPermission: ori.build  # Permission Node to ignore the break limit
+NoBreakException:
+  - DIAMOND_ORE
 
 # Settings about placing blocks
 NoPlace: true
 PlacePermission: ori.build  # Permission Node to ignore the break limit
+NoPlaceException:
+  - OAK_SIGN
 
 # Settings about weather
 NoWeatherChange: true
@@ -24,7 +28,7 @@ NoHunger: true
 NoDamage: true
 # If you don't want to use this function below, just clear all the things below the item title,
 # or you are expected to look for a totally correct DamageCause to add. (They can be from https://bukkit.windit.net/javadoc/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)
-ExceptionDamageCause:
+NoDamageException:
   - SUFFOCATION
   - CUSTOM
 
@@ -32,8 +36,9 @@ ExceptionDamageCause:
 NoDrop: true
 DropPermission: ori.drop  # Permission Node to ignore the drop limit
 
-# Settings about interaction with blocks
+# Settings about interaction(only means that players right-click on a block) with given blocks
 NoInteractionWithBlocks: true
 InteractPermission: ori.build  # Permission Node to ignore the interaction limit
-
+NoInteractionBlocks:
+  - REPEATER
 

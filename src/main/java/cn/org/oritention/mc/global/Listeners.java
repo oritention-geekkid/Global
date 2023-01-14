@@ -1,8 +1,10 @@
 package cn.org.oritention.mc.global;
 
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -15,12 +17,23 @@ import java.util.List;
 
 public class Listeners implements Listener {
 
+    private Boolean isIgnoredBlock(Block block, List<String> ignoreLst){
+        for (String s : ignoreLst) {
+            if (block.getType().name().equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     // BlockBreakEvent
     @EventHandler
     public void BlockBreakEvent(BlockBreakEvent e) {
         if(Config.getConfigB("NoBreak")) {
-            if(!e.getPlayer().hasPermission(Config.getConfigS("BreakPermission"))){
-                e.setCancelled(true);
+            if(!e.getPlayer().hasPermission(Config.getConfigS("BreakPermission"))) {
+                if(!isIgnoredBlock(e.getBlock(),Config.getConfigStringLst("NoBreakException"))) {
+                    e.setCancelled(true);
+                }
             }
         }
     }
@@ -29,8 +42,10 @@ public class Listeners implements Listener {
     @EventHandler
     public void BlockPlaceEvent(BlockPlaceEvent e) {
         if(Config.getConfigB("NoPlace")) {
-            if(!e.getPlayer().hasPermission(Config.getConfigS("PlacePermission"))){
-                e.setCancelled(true);
+            if(!e.getPlayer().hasPermission(Config.getConfigS("PlacePermission"))) {
+                if (!isIgnoredBlock(e.getBlock(), Config.getConfigStringLst("NoPlaceException"))){
+                    e.setCancelled(true);
+                }
             }
         }
     }
@@ -67,7 +82,7 @@ public class Listeners implements Listener {
     public void EntityDamageEvent(EntityDamageEvent e) {
         if(Config.getConfigB("NoDamage")) {
             if(e.getEntity() instanceof Player) {
-                e.setCancelled(isIgnoredCause(e.getCause(), Config.getConfigStringLst("ExceptionDamageCause")));
+                e.setCancelled(isIgnoredCause(e.getCause(), Config.getConfigStringLst("NoDamageException")));
             }
         }
     }
@@ -83,12 +98,22 @@ public class Listeners implements Listener {
     }
 
     // PlayerInteractEvent
+    private Boolean isNoInteractionBlock(Block block, List<String> Lst){
+        for (String s : Lst) {
+            if(block.getType().name().equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
     @EventHandler
     public void PlayerInteractEvent(PlayerInteractEvent e){
         if(Config.getConfigB("NoInteractionWithBlocks")) {
             if(!e.getPlayer().hasPermission(Config.getConfigS("InteractPermission"))) {
-                if(e.hasBlock()) {
-                    e.setCancelled(true);
+                if(e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                    if (isNoInteractionBlock(e.getClickedBlock(), Config.getConfigStringLst("NoInteractionBlocks"))) {
+                        e.setCancelled(true);
+                    }
                 }
             }
         }
