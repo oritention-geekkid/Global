@@ -1,7 +1,7 @@
 # Config File for Global 1.2
 # Before using the plugin, you'd better go through this file and change every option to what you want.
 
-# World
+# World ----------------------------------------------------------------
 # Settings about breaking blocks
 NoBreak: true
 BreakPermission: ori.build  # Permission Node to ignore the break limit
@@ -16,10 +16,11 @@ NoPlaceException:
 
 # Settings about weather
 NoWeatherChange: true
+# World ----------------------------------------------------------------
 
-# Player
-# Day and Night Command
-DayAndNightToggle: true
+# Player ---------------------------------------------------------------
+# Time Change Command
+TimeChangeCommandToggle: true
 
 # Settings about hunger
 NoHunger: true
@@ -41,4 +42,16 @@ NoInteractionWithBlocks: true
 InteractPermission: ori.build  # Permission Node to ignore the interaction limit
 NoInteractionBlocks:
   - REPEATER
+# Player ---------------------------------------------------------------
+
+# ChatSystem -----------------------------------------------------------
+ChatFormatToggle: true
+ChatFormat: "%prefix%%player%&8: &7%message%"  # ChatFormat settings
+PlayerPrefix: "&7"  # Prefix for normal players
+AdminPrefix: "&c"  # Prefix for admins
+AdminPermission: ori.admin  # Permission Node to use admin prefix
+
+ChatCooldownToggle: true
+CooldownTime: 3  # Cooldown time in seconds
+# ChatSystem -----------------------------------------------------------
 

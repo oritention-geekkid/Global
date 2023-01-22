@@ -10,3 +10,5 @@ commands:
     description: change your own time to day
   night:
     description: change your own time to night
+  settime:
+    description: change your own time according to the given parameter
